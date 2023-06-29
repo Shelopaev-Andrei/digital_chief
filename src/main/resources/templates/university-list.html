@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>All university</title>
+</head>
+<body>
+<div th:switch="${universities}">
+    <h2 th:case="null">No faculty found!</h2>
+    <div th:case="*">
+        <h2>Universities</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>idUniversity</th>
+                <th>nameUniversity</th>
+                <th>faculty</th>
+                <th>numberOfStudentsUniversity</th>
+                <th>numberOfTeachersUniversity</th>
+                <th>gpaUniversity</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="university : ${universities}">
+                <td th:text="${university.idUniversity}">1</td>
+                <td th:text="${university.nameUniversity}">2</td>
+                <td th:text="${university.numberOfStudentsUniversity}"></td>
+                <td th:text="${university.numberOfTeachersUniversity}">5</td>
+                <td th:text="${university.gpaUniversity}">6</td>
+                <td><a th:href="@{form-uniUpdate/{id}(id=${university.idUniversity})}">Edit</a></td>
+                <td><a th:href="@{university-delete/{id}(id=${university.idUniversity})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/university-create">Create university</a></p>
+</div>
+</body>
+</html>
+
+

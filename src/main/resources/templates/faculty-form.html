@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create faculty</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/faculty-create}" th:object="${faculty}" method="post">
+    <label for="idFaculty">Faculty ID</label>
+    <input type="number" th:field="*{idFaculty}" id="idFaculty" placeholder="Faculty ID">
+    <br>
+    <label for="nameFaculty">Faculty name</label>
+    <input type="text" th:field="*{nameFaculty}" id="nameFaculty" placeholder="Faculty name">
+    <br>
+    <label for="department">Department</label>
+    <input type="text" th:field="*{department}" id="department" placeholder="Department">
+    <br>
+    <label for="numberOfStudentsFaculty">Number of students</label>
+    <input type="number" step=1 min="0" th:field="*{numberOfStudentsFaculty}" id="numberOfStudentsFaculty"
+           placeholder="Number of students">
+    <br>
+    <label for="numberOfTeachersFaculty">Number of teachers</label>
+    <input type="number" step=1 min="0" th:field="*{numberOfTeachersFaculty}" id="numberOfTeachersFaculty"
+           placeholder="Number of teachers">
+    <br>
+    <label for="gpaFaculty">GPA Faculty</label>
+    <input type="number" min="1" max="10" step="0.1" th:field="*{gpaFaculty}" id="gpaFaculty" >
+    <br>
+    <label for="idUniversity">ID university</label>
+    <input type="number" th:field="*{gpaFaculty}" id="idUniversity" >
+    <br>
+    <input type="submit" value="Create faculty">
+</form>
+
+</body>
+</html>
+

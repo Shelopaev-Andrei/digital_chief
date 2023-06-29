@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>All faculty</title>
+</head>
+<body>
+<div th:switch="${faculties}">
+    <h2 th:case="null">No faculty found!</h2>
+    <div th:case="*">
+        <h2>Faculties</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>idFaculty</th>
+                <th>nameFaculty</th>
+                <th>department</th>
+                <th>numberOfStudentsFaculty</th>
+                <th>numberOfTeachersFaculty</th>
+                <th>gpaFaculty</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="faculty : ${faculties}">
+                <td th:text="${faculty.idFaculty}">1</td>
+                <td th:text="${faculty.nameFaculty}">2</td>
+                <td th:text="${faculty.department}">3</td>
+                <td th:text="${faculty.numberOfStudentsFaculty}">4</td>
+                <td th:text="${faculty.numberOfTeachersFaculty}">5</td>
+                <td th:text="${faculty.gpaFaculty}">6</td>
+<!--                <td th:text="${faculty.id_university}">7</td>-->
+                <td><a th:href="@{faculty-update-form/{id}(id=${faculty.idFaculty})}">Edit</a></td>
+                <td><a th:href="@{faculty-delete/{id}(id=${faculty.idFaculty})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/faculty-create-form">Create faculty</a></p>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create university</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/university-create}" th:object="${university}" method="post">
+    <label for="idUniversity">University ID</label>
+    <input type="number" th:field="*{idUniversity}" id="idUniversity" placeholder="Faculty ID">
+<br>
+    <label for="nameUniversity">University name</label>
+    <input type="text" th:field="*{nameUniversity}" id="nameUniversity" placeholder="Faculty name">
+<br>
+    <label for="numberOfStudentsUniversity">Number of students</label>
+    <input type="number" step=1 min="0" th:field="*{numberOfStudentsUniversity}" id="numberOfStudentsUniversity"
+           placeholder="Number of students">
+<br>
+    <label for="numberOfTeachersUniversity">Number of teachers</label>
+    <input type="number" step=1 min="0" th:field="*{numberOfTeachersUniversity}" id="numberOfTeachersUniversity"
+           placeholder="Number of teachers">
+<br>
+    <label for="gpaUniversity">GPA University</label>
+    <input type="number" min="1" max="10" step="0.1" th:field="*{gpaUniversity}" id="gpaUniversity" >
+
+<br>
+    <input type="submit" value="Create university">
+</form>
+
+</body>
+</html>
+
